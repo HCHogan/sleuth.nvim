@@ -6,6 +6,7 @@ local default_opts = {
   editorconfig   = true,
   neighbor_limit = 8,
   max_lines      = 256,
+  notify = false,
 }
 
 function M.init(user)

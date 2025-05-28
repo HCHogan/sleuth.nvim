@@ -63,6 +63,17 @@ function M.apply(opts)
   if opts.shiftwidth then o.shiftwidth = opts.shiftwidth end
   if opts.tabstop then o.tabstop = opts.tabstop end
   if opts.textwidth then o.textwidth = opts.textwidth end
+
+  if cfg.opts.notify then
+    local parts = {}
+    if opts.shiftwidth then table.insert(parts, 'sw=' .. opts.shiftwidth) end
+    if opts.tabstop then table.insert(parts, 'ts=' .. opts.tabstop) end
+    if opts.expandtab ~= nil then
+      table.insert(parts, (opts.expandtab and 'expandtab' or 'noexpandtab'))
+    end
+    if opts.textwidth then table.insert(parts, 'tw=' .. opts.textwidth) end
+    vim.notify(('sleuth applied: %s'):format(table.concat(parts, ', ')), vim.log.levels.INFO)
+  end
 end
 
 return M
