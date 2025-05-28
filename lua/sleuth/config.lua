@@ -13,4 +13,3 @@ function M.init(user)
 end
 
 return M
-

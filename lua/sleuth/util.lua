@@ -14,4 +14,3 @@ function M.readfile(path)
 end
 
 return M
-

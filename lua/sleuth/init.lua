@@ -1,11 +1,11 @@
 -- lua/sleuth/init.lua
-local M = {}
+local M            = {}
 
-local cfg           = require('sleuth.config')
-local util          = require('sleuth.util')
-local modeline      = require('sleuth.modeline')
-local editorconfig  = require('sleuth.editorconfig')
-local heuristics    = require('sleuth.heuristics')
+local cfg          = require('sleuth.config')
+local util         = require('sleuth.util')
+local modeline     = require('sleuth.modeline')
+local editorconfig = require('sleuth.editorconfig')
+local heuristics   = require('sleuth.heuristics')
 
 -- 默认 setup
 function M.setup(user_opts)
@@ -60,10 +60,9 @@ end
 function M.apply(opts)
   local o = vim.opt_local
   if opts.expandtab ~= nil then o.expandtab = opts.expandtab end
-  if opts.shiftwidth   then o.shiftwidth   = opts.shiftwidth   end
-  if opts.tabstop      then o.tabstop      = opts.tabstop      end
-  if opts.textwidth    then o.textwidth    = opts.textwidth    end
+  if opts.shiftwidth then o.shiftwidth = opts.shiftwidth end
+  if opts.tabstop then o.tabstop = opts.tabstop end
+  if opts.textwidth then o.textwidth = opts.textwidth end
 end
 
 return M
-
